@@ -26,7 +26,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueBootstrapTypeahead src/components/VueBootstrapTypeahead.vue",
-    "build:docs": "vue-cli-service build --dest docs",
+    "build:docs": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit --coverage"
   },
@@ -54,6 +55,7 @@
     "vue-hljs": "^1.0.0",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.17",
+    "vuepress": "^1.3.1",
     "whatwg-fetch": "^2.0.4"
   },
   "directories": {

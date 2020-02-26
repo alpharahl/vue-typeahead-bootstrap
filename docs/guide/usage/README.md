@@ -1,63 +1,18 @@
-# vue-typeahead-bootstrap
-
-A simple `list-group` based typeahead/autocomplete using Bootstrap 4 and Vue 2
-
-<img src="https://raw.githubusercontent.com/mattzollinhofer/vue-typeahead-bootstrap/master/assets/screenshot.png" alt="Preview image of the vue-typeahead-bootstrap component">
-
-## [View The Examples](https://mattzollinhofer.github.io/vue-typeahead-bootstrap/#/examples)
-
-## Installation
-
-From NPM:
-
-[![NPM](https://nodei.co/npm/vue-typeahead-bootstrap.png)](https://www.npmjs.com/package/vue-typeahead-bootstrap)
-
-```
-> npm i vue-typeahead-bootstrap --save
-```
 
 
-<!--Minified UMD and CommonJS builds are available in the 'dist' folder. The component is also available for use in the browser directly on unpkg:
-
-```html
-<link href="https://unpkg.com/vue-typeahead-bootstrap/dist/VueBootstrapTypeahead.css" rel="stylesheet">
-<script src="https://unpkg.com/vue-typeahead-bootstrap"></script>
-```-->
-
-## Usage
-
-Import and register the component
-```javascript
-import VueTypeaheadBootstrap from 'vue-typeahead-bootstrap'
-
-// Global registration
-Vue.component('vue-typeahead-bootstrap', VueTypeaheadBootstrap)
-
-// OR
-
-// Local registration
-export default {
-    components: {
-        VueTypeaheadBootstrap
-    }
-}
-```
-
-### Basic Usage
+# Usage
+## Basic Usage
 The only required attribute is a `data` array.
-
-```html
-<vue-bootstrap-typeahead 
+```vue
+<vue-typeahead-bootstrap
   v-model="query"
-  :data="['Canada', 'USA', 'Mexico']"
+  :data="['Canada', 'United States of America', 'Mexico']"
 />
 ```
 
-### Working with API's
-
-The typeahead does not fetch any data, for maximum flexibility it will only work with already loaded API responses in the form of arrays. The `serializer` attribute allows you to define a function to turn each array item in the response into a text string, which will appear in the results.
-
-```html
+## Working with API's
+The typeahead does not fetch any data, for maximum flexibility it will only work with already loaded API responses in the form of arrays. The serializer attribute allows you to define a function to turn each array item in the response into a text string, which will appear in the results.
+```vue
 <template>
   <vue-bootstrap-typeahead
     :data="addresses"
@@ -98,11 +53,9 @@ export default {
   }
 }
 </script>
-
 ```
 
-### Attributes
-
+## Attributes
 Name | Type | Default | Description
 --- | --- | --- | ---
 data | `Array` | | Array of data to be available for querying. **Required**
@@ -113,23 +66,18 @@ textVariant | `String` | | Text color for the autocomplete result `list-group` i
 inputClass | `String` | | Class to the added to the `input` tag for validation, etc.
 maxMatches | `Number` | 10 | Maximum amount of list items to appear.
 minMatchingChars | `Number` | 2 | Minimum matching characters in query before the typeahead list appears
-showOnFocus | `Boolean` | false | Show results as soon as the input gains focus before the user has typed anything.
-showAllResults | `Boolean` | false | Show all results even ones that highlighting doesn't match. This is useful when interacting with a API that returns results based on different values than what is displayed. Ex: user searches for "USA" and the service returns "United States of America".
 prepend | `String` | | Text to be prepended to the `input-group`
 append | `String` | | Text to be appended to the `input-group`
 
-### Events
+## Events
 Name | Description
 --- | ---
 `hit` | Triggered when an autocomplete item is selected. The entry in the input `data` array that was selected is returned.
 `input` | The component can be used with `v-model`
 
-### Slots
-
+## Slots
 There are `prepend` and `append` slots available for adding buttons or other markup. Overrides the `prepend` and `append` attributes.
-
 ### Scoped Slots
-
 You can use a [scoped slot](https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots) called `suggestion` to define custom content
 for the suggestion `list-item`'s
 
@@ -148,13 +96,3 @@ for the suggestion `list-item`'s
   </template>
 </vue-bootstrap-typeahead>
 ```
-
-## Local Examples/Demo
-
-Clone this repository and run `npm run serve` and navigate to http://localhost:8080 to launch the documentation. The source is in `src/views/Home.vue`
-
-You can also view and edit examples hosted on CodePen [here](https://mattzollinhofer.github.io/vue-typeahead-bootstrap/#/examples)
-
-## Contributing
-
-Please note that active development is done on the `master` branch. PR's are welcome!
