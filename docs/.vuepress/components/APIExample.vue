@@ -1,28 +1,3 @@
-# Demo/Examples
-
-## Basic Usage
-
-<ClientOnly>
-  <BasicExample/>
-</ClientOnly>
-
-
-The only required attribute is a `data` array.
-```vuejs
-<vue-bootstrap-typeahead
-  v-model="query"
-  :data=['Canada', 'United States', 'Mexico']
-  placeholder="Enter a country"
-/>
-```
-
-## API Example
-
-<ClientOnly>
-  <APIExample />
-</ClientOnly>
-
-```js
 <template>
   <div>
     <VueBootstrapTypeahead
@@ -39,7 +14,9 @@ The only required attribute is a `data` array.
 </template>
 
 <script>
-  //imports ... 
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
+  import VueBootstrapTypeahead from "../../../src/components/VueBootstrapTypeahead";
+  import {debounce} from 'lodash';
 
   export default {
     name: "APIExample",
@@ -65,4 +42,7 @@ The only required attribute is a `data` array.
     }
   }
 </script>
-```
+
+<style lang="scss">
+  @import 'bootstrap/scss/bootstrap.scss';
+</style>
