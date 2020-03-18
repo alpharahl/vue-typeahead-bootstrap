@@ -12,3 +12,7 @@ features:
 - title: Works well with JSON API's
   details: Easy to integrate with any JSON based API's
 ---
+
+## Try It Out
+
+<HomePageDemo/>
