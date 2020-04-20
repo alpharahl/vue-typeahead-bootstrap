@@ -1,6 +1,7 @@
 <template>
   <div>
-    <VueBootstrapTypehead
+    Options: `Canada, United States, Mexico`,
+    <vue-bootstrap-typehead
       :data="['Canada', 'United States', 'Mexico']"
       v-model="query"
       placeholder="Choose a country"
