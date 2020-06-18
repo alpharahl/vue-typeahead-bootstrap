@@ -14,7 +14,7 @@
         :aria-label="placeholder"
         :value="inputValue"
         @focus="isFocused = true"
-        @blur="handleBlur"
+        @focusout="handleFocusOut"
         @input="handleInput($event.target.value)"
         @keyup.esc="handleEsc($event.target.value)"
         @keyup.down="$emit('keyup.down', $event.target.value)"
@@ -168,7 +168,7 @@ export default {
       this.isFocused=false;
     },
 
-    handleBlur(evt) {
+    handleFocusOut(evt) {
       const tgt = evt.relatedTarget
       if (tgt && tgt.classList.contains('vbst-item')) {
         return
